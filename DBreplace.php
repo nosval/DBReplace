@@ -15,7 +15,7 @@ $database = array(
 $pdo = new SimplePDO($database);
 
 
-$tables = sql_all('SHOW TABLES');
+$tables = sql_all('SHOW TABLES',"tables_in_".$database['database']);
 
 foreach($tables as $i=>$table)
 {
