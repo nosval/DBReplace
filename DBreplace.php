@@ -1,7 +1,7 @@
 <?php
 
 $changes = array(
-    // 'source' => 'destination',
+    // 'search' => 'replace',
 );
 
 // SQL
@@ -15,7 +15,7 @@ $database = array(
 $pdo = new SimplePDO($database);
 
 
-$tables = sql_all('SHOW TABLES',"tables_in_".$database['database']);
+$tables = sql_all('SHOW TABLES',"tables_in_".strtolower($database['database']);
 
 foreach($tables as $i=>$table)
 {
