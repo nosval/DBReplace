@@ -15,7 +15,7 @@ $database = array(
 $pdo = new SimplePDO($database);
 
 
-$tables = sql_all('SHOW TABLES',"tables_in_".strtolower($database['database']);
+$tables = sql_all('SHOW TABLES',"tables_in_".strtolower($database['database']));
 
 foreach($tables as $i=>$table)
 {
@@ -24,7 +24,7 @@ foreach($tables as $i=>$table)
     {
         foreach($changes as $source=>$dest)
         {
-            // Voir si la colonne contient la chaine recherchée
+            // Voir si la colonne contient la chaine recherchï¿½e
             if(sql_first("SELECT * FROM `".$table."` WHERE `".$column."` LIKE '%".$source."%'"))
             {
                 // Faire la modification complexe pour les lignes JSON
@@ -248,7 +248,7 @@ class SimplePDO{
     // Importer un sql dump dans un fichier
     public function import_file($path)
     {
-        // Nécessite :
+        // Nï¿½cessite :
         //      - Avoir un mot de passe utilisateur non vide
         //      - Avoir le chemin de mysql dans le PATH
         exec("mysql -u ".$this->_config['user']." -p".$this->_config['pass']." -h ".$this->_config['host']." -D ".$this->_config['database']." < ".$path);
