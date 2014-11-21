@@ -19,7 +19,7 @@ $tables = sql_all('SHOW TABLES',"tables_in_".strtolower($database['database']));
 
 foreach($tables as $i=>$table)
 {
-    $columns = sql_all('SHOW COLUMNS FROM '.$table,"field");
+    $columns = sql_all('SHOW COLUMNS FROM `'.$table.'`',"field");
     foreach($columns as $column)
     {
         foreach($changes as $source=>$dest)
